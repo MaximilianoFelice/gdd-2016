@@ -1,4 +1,4 @@
-﻿namespace HotelModel.User_Permissions.tests.ResourceForms
+﻿namespace Resources.User_Permissions.tests.ResourceForms
 {
     partial class Attribute_tests_form
     {
@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.handledButton1 = new HotelModel.User_Permissions.HandledControls.HandledButton();
+            this.handledButton1 = new Resources.User_Permissions.HandledControls.HandledButton();
             this.button1 = new System.Windows.Forms.Button();
-            this.onlyAccessButton = new HotelModel.User_Permissions.HandledControls.HandledButton();
-            this.onlyVisibleButton = new HotelModel.User_Permissions.HandledControls.HandledButton();
+            this.onlyAccessButton = new Resources.User_Permissions.HandledControls.HandledButton();
+            this.onlyVisibleButton = new Resources.User_Permissions.HandledControls.HandledButton();
             this.SuspendLayout();
             // 
             // handledButton1
@@ -95,9 +95,9 @@
 
         #endregion
 
-        private HotelModel.User_Permissions.HandledControls.HandledButton handledButton1;
+        private Resources.User_Permissions.HandledControls.HandledButton handledButton1;
         private System.Windows.Forms.Button button1;
-        private HotelModel.User_Permissions.HandledControls.HandledButton onlyAccessButton;
-        private HotelModel.User_Permissions.HandledControls.HandledButton onlyVisibleButton;
+        private Resources.User_Permissions.HandledControls.HandledButton onlyAccessButton;
+        private Resources.User_Permissions.HandledControls.HandledButton onlyVisibleButton;
     }
 }

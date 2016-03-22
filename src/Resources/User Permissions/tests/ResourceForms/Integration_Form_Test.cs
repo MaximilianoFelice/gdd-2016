@@ -6,10 +6,10 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using HotelModel.User_Permissions.UFR;
+using Resources.User_Permissions.UFR;
 using ExtensionMethods;
 
-namespace HotelModel.User_Permissions.tests.ResourceForms
+namespace Resources.User_Permissions.tests.ResourceForms
 {
     public partial class Integration_Form_Test : Form
     {

@@ -6,11 +6,11 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using HotelModel.DB_Conn_DSL;
+using Resources.DB_Conn_DSL;
 using System.Data.SqlClient;
 using ExtensionMethods;
 
-namespace HotelModel.User_Permissions.UI
+namespace Resources.User_Permissions.UI
 {
     public partial class RehabForm : Form
     {

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data;
-using HotelModel.DB_Conn_DSL;
+using Resources.DB_Conn_DSL;
 
-namespace HotelModel.Home
+namespace Resources.Home
 {
     public class RegimenHandler
     {

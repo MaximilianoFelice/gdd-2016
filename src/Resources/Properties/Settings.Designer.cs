@@ -22,5 +22,50 @@ namespace Resources.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("localhost\\SQLSERVER2008")]
+        public string DB_ENDPOINT {
+            get {
+                return ((string)(this["DB_ENDPOINT"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("gd")]
+        public string DB_USER {
+            get {
+                return ((string)(this["DB_USER"]));
+            }
+            set {
+                this["DB_USER"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("gd2016")]
+        public string DB_PASSWORD {
+            get {
+                return ((string)(this["DB_PASSWORD"]));
+            }
+            set {
+                this["DB_PASSWORD"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("GD1C2016")]
+        public string DB_NAME {
+            get {
+                return ((string)(this["DB_NAME"]));
+            }
+            set {
+                this["DB_NAME"] = value;
+            }
+        }
     }
 }

@@ -70,6 +70,7 @@
     <Compile Include="DB Conn DSL\SqlQuery.cs" />
     <Compile Include="DB Conn DSL\SqlFunction.cs" />
     <Compile Include="DB Conn DSL\DataAdapterRetriever.cs" />
+    <Compile Include="DB Conn DSL\tests\Connection_tests.cs" />
     <Compile Include="DB Conn DSL\tests\SqlQuery_tests.cs" />
     <Compile Include="DB Conn DSL\tests\StoredProcedureConnection_tests.cs" />
     <Compile Include="ExtensionMethods.cs" />
@@ -195,6 +196,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="DB Conn DSL\Snippets\Adapter_DataSet_Accessor.snippet" />
     <None Include="DB Conn DSL\Snippets\DS_and_DA_Generator.snippet" />
     <None Include="Properties\Settings.settings">

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace HotelModel.Home
+namespace Resources.Home
 {
     public class ValidationsHandler
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data.SqlClient;
 
-namespace HotelModel.DB_Conn_DSL
+namespace Resources.DB_Conn_DSL
 {
     public class DataAdapterRetriever : DataRetrieverBuilder
     {

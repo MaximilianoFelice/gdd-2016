@@ -6,9 +6,9 @@ using NUnit.Framework;
 using System.Data.SqlClient;
 using System.Data;
 using ExtensionMethods;
-using HotelModel.DB_Conn_DSL;
+using Resources.DB_Conn_DSL;
 
-namespace HotelModel.DB_Conn_DSL.tests
+namespace Resources.DB_Conn_DSL.tests
 {
     [TestFixture]
     public class SqlQuery_tests

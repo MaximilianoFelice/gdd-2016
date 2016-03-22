@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using NUnit.Framework;
 using System.Windows.Forms;
-using HotelModel.User_Permissions.UFR;
+using Resources.User_Permissions.UFR;
 
-namespace HotelModel.User_Permissions.tests
+namespace Resources.User_Permissions.tests
 {
     [TestFixture]
     public class Hooks_tests
@@ -18,7 +18,7 @@ namespace HotelModel.User_Permissions.tests
         [TestFixtureSetUp]
         public void Init()
         {
-            BaseForm = new HotelModel.User_Permissions.tests.ResourceForms.Attribute_tests_form();
+            BaseForm = new Resources.User_Permissions.tests.ResourceForms.Attribute_tests_form();
             PermissionManager.StartPoint(BaseForm);
 
             ActiveUser.LoadUser("Test_User", new String[] {"admin"});

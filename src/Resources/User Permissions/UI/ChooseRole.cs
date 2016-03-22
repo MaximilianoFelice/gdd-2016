@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace HotelModel.User_Permissions.UI
+namespace Resources.User_Permissions.UI
 {
     public partial class ChooseRole : Form
     {

@@ -5,9 +5,9 @@ using System.Text;
 using System.Data;
 using System.Data.SqlClient;
 using ExtensionMethods;
-using HotelModel.DB_Conn_DSL;
+using Resources.DB_Conn_DSL;
 
-namespace HotelModel.Home
+namespace Resources.Home
 {
     public class StatisticsHandler
     {

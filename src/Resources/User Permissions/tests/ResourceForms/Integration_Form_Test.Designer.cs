@@ -1,4 +1,4 @@
-﻿namespace HotelModel.User_Permissions.tests.ResourceForms
+﻿namespace Resources.User_Permissions.tests.ResourceForms
 {
     partial class Integration_Form_Test
     {

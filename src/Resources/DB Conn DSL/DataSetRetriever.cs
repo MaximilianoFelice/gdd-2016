@@ -7,7 +7,7 @@ using System.Data;
 using ExtensionMethods;
 
 
-namespace HotelModel.DB_Conn_DSL
+namespace Resources.DB_Conn_DSL
 {
     class DataSetRetriever : DataRetrieverBuilder
     {

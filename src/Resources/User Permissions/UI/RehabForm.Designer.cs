@@ -1,4 +1,4 @@
-﻿namespace HotelModel.User_Permissions.UI
+﻿namespace Resources.User_Permissions.UI
 {
     partial class RehabForm
     {

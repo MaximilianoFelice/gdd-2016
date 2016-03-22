@@ -5,7 +5,7 @@ using System.Text;
 using System.Windows.Forms;
 using NUnit.Framework;
 
-namespace HotelModel.User_Permissions.tests
+namespace Resources.User_Permissions.tests
 {
     [TestFixture]
     public class Roles_tests

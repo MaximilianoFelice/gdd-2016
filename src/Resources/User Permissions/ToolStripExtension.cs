@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using HotelModel.User_Permissions.UFR;
+using Resources.User_Permissions.UFR;
 using System.Windows.Forms;
-using HotelModel.User_Permissions.Exceptions;
+using Resources.User_Permissions.Exceptions;
 
-namespace HotelModel.User_Permissions
+namespace Resources.User_Permissions
 {
     public static class ToolStripExtension
     {

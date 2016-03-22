@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using HotelModel;
-using HotelModel.DB_Conn_DSL;
+using Resources;
+using Resources.DB_Conn_DSL;
 using System.Security.Cryptography;
 using System.Data.SqlClient;
 using System.Data;
 
 
-namespace HotelModel
+namespace Resources
 {
     public static class User
     {

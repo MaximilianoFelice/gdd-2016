@@ -6,11 +6,11 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using HotelModel.User_Permissions.HandledControls;
-using HotelModel.User_Permissions;
+using Resources.User_Permissions.HandledControls;
+using Resources.User_Permissions;
 
 
-namespace HotelModel.User_Permissions.tests.ResourceForms
+namespace Resources.User_Permissions.tests.ResourceForms
 {
     [PermissionHandled]
     public partial class Attribute_tests_form : HandledForm

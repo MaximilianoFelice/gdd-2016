@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace HotelModel.User_Permissions
+namespace Resources.User_Permissions
 {
     public static class ControlEvents
     {

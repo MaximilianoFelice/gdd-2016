@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using HotelModel;
-using HotelModel.DB_Conn_DSL;
+using Resources;
+using Resources.DB_Conn_DSL;
 using System.Security.Cryptography;
 using System.Data.SqlClient;
 using System.Data;
 using System.Windows.Forms;
-using HotelModel.User_Permissions.Exceptions;
+using Resources.User_Permissions.Exceptions;
 
-namespace HotelModel.User_Permissions.UFR
+namespace Resources.User_Permissions.UFR
 {
 
     public class Role

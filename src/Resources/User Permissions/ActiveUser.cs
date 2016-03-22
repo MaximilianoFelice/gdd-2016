@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using HotelModel;
-using HotelModel.DB_Conn_DSL;
+using Resources;
+using Resources.DB_Conn_DSL;
 using System.Security.Cryptography;
 using System.Data.SqlClient;
 using System.Data;
-using HotelModel.User_Permissions.UFR;
+using Resources.User_Permissions.UFR;
 using System.Windows.Forms;
-using HotelModel.User_Permissions.Exceptions;
+using Resources.User_Permissions.Exceptions;
 
-namespace HotelModel.User_Permissions
+namespace Resources.User_Permissions
 {
     public static class ActiveUser
     {

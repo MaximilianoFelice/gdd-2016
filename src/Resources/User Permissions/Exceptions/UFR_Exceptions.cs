@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace HotelModel.User_Permissions.Exceptions
+namespace Resources.User_Permissions.Exceptions
 {
     public class ActiveRoleNotSetException : Exception
     {

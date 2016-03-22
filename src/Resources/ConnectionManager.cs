@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 using System.Data;
 using ExtensionMethods;
 
-namespace HotelModel
+namespace Resources
 {
     public static class ConnectionManager
     {
@@ -51,7 +51,16 @@ namespace HotelModel
 
         static String generateConnString()
         {
-            return "Data Source=localhost\\SQLSERVER2008;Initial Catalog=GD2C2014;Integrated Security=False;User ID=gd;Password=gd2014;Connect Timeout=10";
+            Dictionary<String, String> connectionData = new Dictionary<string, string>();
+
+            connectionData["Data Source"] = Resources.Properties.Settings.Default.DB_ENDPOINT;
+            connectionData["Initial Catalog"] = Resources.Properties.Settings.Default.DB_NAME;
+            connectionData["User ID"] = Resources.Properties.Settings.Default.DB_USER;
+            connectionData["Password"] = Resources.Properties.Settings.Default.DB_PASSWORD;
+            connectionData["Integrated Security"] = "False";
+            connectionData["Connect Timeout"] = "10";
+
+            return string.Join(";", connectionData.Select(x => x.Key + "=" + x.Value).ToArray());
         }
     }
 }

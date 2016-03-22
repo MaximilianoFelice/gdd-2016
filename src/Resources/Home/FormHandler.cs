@@ -6,7 +6,7 @@ using System.Windows.Forms;
 using System.Data;
 
 
-namespace HotelModel.Home
+namespace Resources.Home
 {
    public class FormHandler
     {

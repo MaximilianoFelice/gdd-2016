@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using NUnit.Framework;
-using HotelModel.User_Permissions.HandledControls;
+using Resources.User_Permissions.HandledControls;
 
-namespace HotelModel.User_Permissions.tests
+namespace Resources.User_Permissions.tests
 {
     [TestFixture]
     public class Annotated_Forms_Tests
@@ -16,7 +16,7 @@ namespace HotelModel.User_Permissions.tests
         [SetUp]
         public void Init()
         {
-            BaseForm = new HotelModel.User_Permissions.tests.ResourceForms.Attribute_tests_form();
+            BaseForm = new Resources.User_Permissions.tests.ResourceForms.Attribute_tests_form();
             PermissionManager.StartPoint(BaseForm);
 
         }

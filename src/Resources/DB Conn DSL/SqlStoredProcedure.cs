@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 using System.Data;
 using ExtensionMethods;
 
-namespace HotelModel.DB_Conn_DSL
+namespace Resources.DB_Conn_DSL
 {
 
     public class SqlStoredProcedure : SqlWithParams

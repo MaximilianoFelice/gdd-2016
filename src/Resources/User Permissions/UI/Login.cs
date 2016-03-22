@@ -6,9 +6,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using HotelModel.User_Permissions.UFR;
+using Resources.User_Permissions.UFR;
 
-namespace HotelModel.User_Permissions.UI
+namespace Resources.User_Permissions.UI
 {
     public partial class frmLogin : Form
     {

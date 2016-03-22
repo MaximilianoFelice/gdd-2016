@@ -5,7 +5,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.ComponentModel;
 
-namespace HotelModel.User_Permissions.HandledControls
+namespace Resources.User_Permissions.HandledControls
 {
     public partial class HandledButton : Button
     {
