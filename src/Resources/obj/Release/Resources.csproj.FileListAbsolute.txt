@@ -1,0 +1,16 @@
+C:\Users\Maximiliano Felice\workspace\GDD\src\Resources\bin\Release\Resources.dll
+C:\Users\Maximiliano Felice\workspace\GDD\src\Resources\bin\Release\Resources.pdb
+C:\Users\Maximiliano Felice\workspace\GDD\src\Resources\bin\Release\nunit.framework.dll
+C:\Users\Maximiliano Felice\workspace\GDD\src\Resources\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Maximiliano Felice\workspace\GDD\src\Resources\obj\Release\Resources.Properties.Resources.resources
+C:\Users\Maximiliano Felice\workspace\GDD\src\Resources\obj\Release\HotelModel.User_Permissions.HandledControls.HandledForm.resources
+C:\Users\Maximiliano Felice\workspace\GDD\src\Resources\obj\Release\HotelModel.User_Permissions.tests.ResourceForms.Attribute_tests_form.resources
+C:\Users\Maximiliano Felice\workspace\GDD\src\Resources\obj\Release\HotelModel.User_Permissions.tests.ResourceForms.Integration_Form_Test.resources
+C:\Users\Maximiliano Felice\workspace\GDD\src\Resources\obj\Release\HotelModel.User_Permissions.UI.frmAddNew.resources
+C:\Users\Maximiliano Felice\workspace\GDD\src\Resources\obj\Release\HotelModel.User_Permissions.UI.ChooseRole.resources
+C:\Users\Maximiliano Felice\workspace\GDD\src\Resources\obj\Release\HotelModel.User_Permissions.UI.frmLogin.resources
+C:\Users\Maximiliano Felice\workspace\GDD\src\Resources\obj\Release\HotelModel.User_Permissions.UI.RehabForm.resources
+C:\Users\Maximiliano Felice\workspace\GDD\src\Resources\obj\Release\HotelModel.User_Permissions.UI.frmRoles.resources
+C:\Users\Maximiliano Felice\workspace\GDD\src\Resources\obj\Release\Resources.csproj.GenerateResource.Cache
+C:\Users\Maximiliano Felice\workspace\GDD\src\Resources\obj\Release\Resources.dll
+C:\Users\Maximiliano Felice\workspace\GDD\src\Resources\obj\Release\Resources.pdb

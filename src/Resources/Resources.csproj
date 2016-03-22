@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CEEA0801-31CA-435C-A548-BBDB10733F51}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Resources</RootNamespace>
+    <AssemblyName>Resources</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework, Version=2.6.3.13283, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\NUnit 2.6.3\bin\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DB Conn DSL\DataReaderRetriever.cs" />
+    <Compile Include="DB Conn DSL\DataRetrieverBuilder.cs" />
+    <Compile Include="DB Conn DSL\DataSetRetriever.cs" />
+    <Compile Include="DB Conn DSL\DataTableRetriever.cs" />
+    <Compile Include="DB Conn DSL\SqlCommandDSL.cs" />
+    <Compile Include="DB Conn DSL\SqlStoredProcedure.cs" />
+    <Compile Include="DB Conn DSL\SqlWithParams.cs" />
+    <Compile Include="DB Conn DSL\SqlQuery.cs" />
+    <Compile Include="DB Conn DSL\SqlFunction.cs" />
+    <Compile Include="DB Conn DSL\DataAdapterRetriever.cs" />
+    <Compile Include="DB Conn DSL\tests\SqlQuery_tests.cs" />
+    <Compile Include="DB Conn DSL\tests\StoredProcedureConnection_tests.cs" />
+    <Compile Include="ExtensionMethods.cs" />
+    <Compile Include="ConnectionManager.cs" />
+    <Compile Include="Model\ApplicationModel.cs" />
+    <Compile Include="Home\BillHandler.cs" />
+    <Compile Include="Home\BookingHandler.cs" />
+    <Compile Include="Model\CountryModel.cs" />
+    <Compile Include="Home\ExtraHandler.cs" />
+    <Compile Include="Home\GuestHandler.cs" />
+    <Compile Include="Home\HotelHandler.cs" />
+    <Compile Include="Home\FormHandler.cs" />
+    <Compile Include="Home\RegimenHandler.cs" />
+    <Compile Include="Home\RoomHandler.cs" />
+    <Compile Include="Home\StatisticsHandler.cs" />
+    <Compile Include="Home\StayHandler.cs" />
+    <Compile Include="Home\ValidationsHandler.cs" />
+    <Compile Include="Model\RegimenModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="User Permissions\ActiveUser.cs" />
+    <Compile Include="User Permissions\Attributes.cs" />
+    <Compile Include="User Permissions\ControlEvents.cs" />
+    <Compile Include="User Permissions\ControlExtensions.cs" />
+    <Compile Include="User Permissions\Exceptions\Login_Exceptions.cs" />
+    <Compile Include="User Permissions\Exceptions\UFR_Exceptions.cs" />
+    <Compile Include="User Permissions\HandledControls\HandledButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="User Permissions\HandledControls\HandledForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User Permissions\PermissionManager.cs" />
+    <Compile Include="User Permissions\tests\Attributes_tests.cs">
+    </Compile>
+    <Compile Include="User Permissions\tests\Features_test.cs" />
+    <Compile Include="User Permissions\tests\Hooks_tests.cs" />
+    <Compile Include="User Permissions\tests\ResourceForms\Attribute_tests_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User Permissions\tests\ResourceForms\Attribute_tests_form.Designer.cs">
+      <DependentUpon>Attribute_tests_form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Permissions\tests\ResourceForms\Integration_Form_Test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User Permissions\tests\ResourceForms\Integration_Form_Test.Designer.cs">
+      <DependentUpon>Integration_Form_Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Permissions\tests\Roles_tests.cs" />
+    <Compile Include="User Permissions\ToolStripExtension.cs" />
+    <Compile Include="User Permissions\UFR\Feature.cs" />
+    <Compile Include="User Permissions\UFR\Role.cs" />
+    <Compile Include="User Permissions\UI\AddNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User Permissions\UI\AddNew.Designer.cs">
+      <DependentUpon>AddNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Permissions\UI\ChooseRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User Permissions\UI\ChooseRole.Designer.cs">
+      <DependentUpon>ChooseRole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Permissions\UI\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User Permissions\UI\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Permissions\UI\RehabForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User Permissions\UI\RehabForm.Designer.cs">
+      <DependentUpon>RehabForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Permissions\UI\Roles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User Permissions\UI\Roles.Designer.cs">
+      <DependentUpon>Roles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Permissions\HandledControls\HandledForm.resx">
+      <DependentUpon>HandledForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Permissions\tests\ResourceForms\Attribute_tests_form.resx">
+      <DependentUpon>Attribute_tests_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Permissions\tests\ResourceForms\Integration_Form_Test.resx">
+      <DependentUpon>Integration_Form_Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Permissions\UI\AddNew.resx">
+      <DependentUpon>AddNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Permissions\UI\ChooseRole.resx">
+      <DependentUpon>ChooseRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Permissions\UI\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Permissions\UI\RehabForm.resx">
+      <DependentUpon>RehabForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Permissions\UI\Roles.resx">
+      <DependentUpon>Roles.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DB Conn DSL\Snippets\Adapter_DataSet_Accessor.snippet" />
+    <None Include="DB Conn DSL\Snippets\DS_and_DA_Generator.snippet" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
