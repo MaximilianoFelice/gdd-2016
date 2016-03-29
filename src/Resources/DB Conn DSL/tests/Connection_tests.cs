@@ -22,7 +22,6 @@ namespace Resources.DB_Conn_DSL.tests
         [Test]
         public void CanConnectToDB()
         {
-            Console.WriteLine("Using Connection String: " + ConnectionManager.connectionString);
             Assert.True(ConnectionManager.sqlConn.State == ConnectionState.Open);
         }
 

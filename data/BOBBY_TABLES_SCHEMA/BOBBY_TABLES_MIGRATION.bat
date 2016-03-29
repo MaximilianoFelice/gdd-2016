@@ -1,0 +1,1 @@
+sqlcmd -S localhost\SQLSERVER2008 -U gd -P gd2016 -i BOBBY_TABLES.Schema.sql -a 32767 -o batch_log.txt

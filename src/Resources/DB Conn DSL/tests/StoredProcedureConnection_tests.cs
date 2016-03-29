@@ -44,7 +44,7 @@ namespace Resources.DB_Conn_DSL.tests
         [Test]
         public void userLoginIsCorrect()
         {
-            SqlResults results = new SqlStoredProcedure("[BOBBY_TABLES].validateUserPass")
+            SqlResults results = new SqlStoredProcedure("[" + Resources.Properties.Settings.Default.SCHEMA_NAME + "].validateUserPass")
                                     .WithParam("@User").As(SqlDbType.VarChar).Value(user.ToString())
                                     .WithParam("@Pass").As(SqlDbType.VarChar).Value(password.ToString())
                                     .WithParam("@RESULT").As(SqlDbType.Bit).AsOutput()
@@ -56,7 +56,7 @@ namespace Resources.DB_Conn_DSL.tests
         [Test]
         public void userLoginIsNotCorrect()
         {
-            SqlResults results = new SqlStoredProcedure("[BOBBY_TABLES].validateUserPass")
+            SqlResults results = new SqlStoredProcedure("[" + Resources.Properties.Settings.Default.SCHEMA_NAME + "].validateUserPass")
                                     .WithParam("@User").As(SqlDbType.VarChar).Value(user.ToString())
                                     .WithParam("@Pass").As(SqlDbType.VarChar).Value("WRONG")
                                     .WithParam("@RESULT").As(SqlDbType.Bit).AsOutput()
@@ -68,7 +68,7 @@ namespace Resources.DB_Conn_DSL.tests
         [Test]
         public void ExecuteReturnsAllOutputParams()
         {
-            SqlResults results = new SqlStoredProcedure("[BOBBY_TABLES].OUTPUT_TEST")
+            SqlResults results = new SqlStoredProcedure("[" + Resources.Properties.Settings.Default.SCHEMA_NAME + "].OUTPUT_TEST")
                                     .WithParam("@anOutput").AsOutput().As(SqlDbType.VarChar).WithMaximumSize(50)
                                     .WithParam("@aValue").As(SqlDbType.Int).Value(10)
                                     .WithParam("@anotherOutput").AsOutput().As(SqlDbType.Int)
@@ -84,7 +84,7 @@ namespace Resources.DB_Conn_DSL.tests
         [Test]
         public void ExecuteWithComeback()
         {
-            SqlResults results = new SqlStoredProcedure("[BOBBY_TABLES].RESULTS_TEST")
+            SqlResults results = new SqlStoredProcedure("[" + Resources.Properties.Settings.Default.SCHEMA_NAME + "].RESULTS_TEST")
                                     .Execute();
 
             DataSet retVals = (DataSet) results["ReturnedValues"];
@@ -96,7 +96,7 @@ namespace Resources.DB_Conn_DSL.tests
         [ExpectedException( typeof(KeyNotFoundException))]
         public void HasNoComeback()
         {
-            SqlResults results = new SqlStoredProcedure("[BOBBY_TABLES].OUTPUT_TEST")
+            SqlResults results = new SqlStoredProcedure("[" + Resources.Properties.Settings.Default.SCHEMA_NAME + "].OUTPUT_TEST")
                                     .WithParam("@anOutput").AsOutput().As(SqlDbType.VarChar).WithMaximumSize(50)
                                     .WithParam("@aValue").As(SqlDbType.Int).Value(10)
                                     .WithParam("@anotherOutput").AsOutput().As(SqlDbType.Int)
@@ -108,7 +108,7 @@ namespace Resources.DB_Conn_DSL.tests
         [Test]
         public void RetunsValidDataReader()
         {
-            SqlResults results = new SqlStoredProcedure("[BOBBY_TABLES].RESULTS_TEST")
+            SqlResults results = new SqlStoredProcedure("[" + Resources.Properties.Settings.Default.SCHEMA_NAME + "].RESULTS_TEST")
                         .AsDataReader()
                         .Execute();
 
@@ -122,7 +122,7 @@ namespace Resources.DB_Conn_DSL.tests
         [Test]
         public void ReturnsValidDataTable()
         {
-            SqlResults results = new SqlStoredProcedure("[BOBBY_TABLES].RESULTS_TEST")
+            SqlResults results = new SqlStoredProcedure("[" + Resources.Properties.Settings.Default.SCHEMA_NAME + "].RESULTS_TEST")
                         .AsDataTable()
                         .Execute();
 
@@ -134,7 +134,7 @@ namespace Resources.DB_Conn_DSL.tests
         [Test]
         public void ReturnValuesWorks()
         {
-            SqlResults results = new SqlStoredProcedure("[BOBBY_TABLES].RETURN_TEST")
+            SqlResults results = new SqlStoredProcedure("[" + Resources.Properties.Settings.Default.SCHEMA_NAME + "].RETURN_TEST")
                                    .WithParam("RetVal").AsReturnValue()
                                    .Execute();
 

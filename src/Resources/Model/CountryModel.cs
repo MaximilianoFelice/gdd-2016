@@ -21,7 +21,7 @@ namespace Resources.Home
             {
                 if (_country == null)
                 {
-                    _country_adapter = (SqlDataAdapter) new SqlQuery("SELECT country FROM BOBBY_TABLES.COUNTRIES;").AsDataAdapter().Execute()["ReturnedValues"];
+                    _country_adapter = (SqlDataAdapter) new SqlQuery("SELECT country FROM " + Resources.Properties.Settings.Default.SCHEMA_NAME + ".COUNTRIES;").AsDataAdapter().Execute()["ReturnedValues"];
                     _country = new DataSet();
                     _country_adapter.Fill(_country);
                 } 

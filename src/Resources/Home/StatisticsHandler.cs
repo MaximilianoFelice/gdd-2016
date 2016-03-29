@@ -13,7 +13,7 @@ namespace Resources.Home
     {
         public DataTable cancelledBookings(DateTime from, DateTime to){
         
-            SqlResults results = new SqlStoredProcedure("[BOBBY_TABLES].SP_STATISTICS_CANCEL_BOOKINGS")
+            SqlResults results = new SqlStoredProcedure("[" + Resources.Properties.Settings.Default.SCHEMA_NAME + "].SP_STATISTICS_CANCEL_BOOKINGS")
                                 .WithParam("@From").As(SqlDbType.DateTime).Value(from)
                                 .WithParam("@To").As(SqlDbType.DateTime).Value(to)
                                 .WithParam("@ReturnedValues").AsDataTable().AsOutput()
@@ -26,7 +26,7 @@ namespace Resources.Home
              
        public DataTable extraBilled(DateTime from, DateTime to){
         
-            SqlResults results = new SqlStoredProcedure("[BOBBY_TABLES].SP_STATISTICS_EXTRA_BILLED")
+            SqlResults results = new SqlStoredProcedure("[" + Resources.Properties.Settings.Default.SCHEMA_NAME + "].SP_STATISTICS_EXTRA_BILLED")
                                 .WithParam("@From").As(SqlDbType.DateTime).Value(from)
                                 .WithParam("@To").As(SqlDbType.DateTime).Value(to)
                                 .WithParam("@ReturnedValues").AsDataTable().AsOutput()
@@ -38,7 +38,7 @@ namespace Resources.Home
             
         public DataTable outService(DateTime from, DateTime to){
         
-            SqlResults results = new SqlStoredProcedure("[BOBBY_TABLES].SP_STATISTICS_OUT_SERVICE")
+            SqlResults results = new SqlStoredProcedure("[" + Resources.Properties.Settings.Default.SCHEMA_NAME + "].SP_STATISTICS_OUT_SERVICE")
                                 .WithParam("@From").As(SqlDbType.DateTime).Value(from)
                                 .WithParam("@To").As(SqlDbType.DateTime).Value(to)
                                 .WithParam("@ReturnedValues").AsDataTable().AsOutput()
@@ -50,7 +50,7 @@ namespace Resources.Home
         
        public DataTable guestsPoints(DateTime from, DateTime to){
         
-            SqlResults results = new SqlStoredProcedure("[BOBBY_TABLES].SP_STATISTICS_GUESTS_POINTS")
+            SqlResults results = new SqlStoredProcedure("[" + Resources.Properties.Settings.Default.SCHEMA_NAME + "].SP_STATISTICS_GUESTS_POINTS")
                                 .WithParam("@From").As(SqlDbType.DateTime).Value(from)
                                 .WithParam("@To").As(SqlDbType.DateTime).Value(to)
                                 .WithParam("@ReturnedValues").AsDataTable().AsOutput()
@@ -62,7 +62,7 @@ namespace Resources.Home
                    
         public DataTable occupiedRooms(DateTime from, DateTime to){
         
-            SqlResults results = new SqlStoredProcedure("[BOBBY_TABLES].SP_STATISTICS_OCCUPIED_ROOMS")
+            SqlResults results = new SqlStoredProcedure("[" + Resources.Properties.Settings.Default.SCHEMA_NAME + "].SP_STATISTICS_OCCUPIED_ROOMS")
                                 .WithParam("@From").As(SqlDbType.DateTime).Value(from)
                                 .WithParam("@To").As(SqlDbType.DateTime).Value(to)
                                 .WithParam("@ReturnedValues").AsDataTable().AsOutput()

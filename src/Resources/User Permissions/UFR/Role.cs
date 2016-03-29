@@ -41,7 +41,7 @@ namespace Resources.User_Permissions.UFR
         private void getRoleFeatures()
         {
             /* QUERY HERE */
-            DataSet res = (DataSet)new SqlStoredProcedure("[BOBBY_TABLES].GetRoleFeatures").WithParam("@Role").Value(role_id).Execute()["ReturnedValues"];
+            DataSet res = (DataSet)new SqlStoredProcedure("[" + Resources.Properties.Settings.Default.SCHEMA_NAME + "].GetRoleFeatures").WithParam("@Role").Value(role_id).Execute()["ReturnedValues"];
 
             /* Mapped to corresponding objects */
             features = res.Tables[0].AsEnumerable().Select(x => x["descr"]).ToList().Select(feat => Feature.getFeaturesDictionary[(String) feat]).ToList();
@@ -50,7 +50,7 @@ namespace Resources.User_Permissions.UFR
         public static void LoadRoles() 
         {
             _LoadedRoles = new Dictionary<String, Role>();
-            DataSet res = (DataSet)new SqlQuery("SELECT * FROM [BOBBY_TABLES].ACTIVE_ROLES;").AsDataSet().Execute()["ReturnedValues"];
+            DataSet res = (DataSet)new SqlQuery("SELECT * FROM [" + Resources.Properties.Settings.Default.SCHEMA_NAME + "].ACTIVE_ROLES;").AsDataSet().Execute()["ReturnedValues"];
 
             foreach (DataRow row in res.Tables[0].AsEnumerable()) new Role(row);
             

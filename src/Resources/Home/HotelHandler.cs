@@ -22,7 +22,7 @@ namespace Resources.Home
             {
                 if (_hotels == null)
                 {
-                    _hotels_adapter = (SqlDataAdapter)new SqlQuery("SELECT * FROM BOBBY_TABLES.ACTIVE_HOTELS;").AsDataAdapter().Execute()["ReturnedValues"];
+                    _hotels_adapter = (SqlDataAdapter)new SqlQuery("SELECT * FROM " + Resources.Properties.Settings.Default.SCHEMA_NAME + ".ACTIVE_HOTELS;").AsDataAdapter().Execute()["ReturnedValues"];
                     _hotels = new DataSet();
                     _hotels_adapter.Fill(_hotels);
                 } 
@@ -37,7 +37,7 @@ namespace Resources.Home
 
         public static void CheckHotelStates()
         {
-            new SqlStoredProcedure("[BOBBY_TABLES].CheckMantenienceStatus")
+            new SqlStoredProcedure("[" + Resources.Properties.Settings.Default.SCHEMA_NAME + "].CheckMantenienceStatus")
                                 .WithParam("@date").As(SqlDbType.DateTime).Value(DateTime.Today)
                                 .Execute();
         }
@@ -45,7 +45,7 @@ namespace Resources.Home
         public static DataSet filteredSearch(String name, int? stars, String city, String country)
         {
 
-            SqlFunction func = new SqlFunction("[BOBBY_TABLES].SP_FILTER_HOTELS")
+            SqlFunction func = new SqlFunction("[" + Resources.Properties.Settings.Default.SCHEMA_NAME + "].SP_FILTER_HOTELS")
                                 .WithParam("@Name").As(SqlDbType.VarChar).Value(name)
                                 .WithParam("@City").As(SqlDbType.VarChar).Value(city)
                                 .WithParam("@Country").As(SqlDbType.VarChar).Value(country);
@@ -81,7 +81,7 @@ namespace Resources.Home
 
         public Boolean setForManteinance(DateTime start, DateTime end, String descr)
         {
-            SqlResults results = new SqlStoredProcedure("[BOBBY_TABLES].SP_HOTEL_MANTEINANCE")
+            SqlResults results = new SqlStoredProcedure("[" + Resources.Properties.Settings.Default.SCHEMA_NAME + "].SP_HOTEL_MANTEINANCE")
                                  .WithParam("@IdHotel").As(SqlDbType.Int).Value((int) Hotel["id_hotel"])
                                  .WithParam("@Start").As(SqlDbType.DateTime).Value(start)
                                  .WithParam("@End").As(SqlDbType.DateTime).Value(end)
@@ -102,7 +102,7 @@ namespace Resources.Home
             {
                 if (_regimens == null)
                 {
-                    _regimens_adapter = (SqlDataAdapter) new SqlQuery("SELECT id_hotel, id_regimen FROM BOBBY_TABLES.REGIMEN_HOTEL where id_hotel = " + Hotel["id_hotel"] ).AsDataAdapter().Execute()["ReturnedValues"];
+                    _regimens_adapter = (SqlDataAdapter) new SqlQuery("SELECT id_hotel, id_regimen FROM " + Resources.Properties.Settings.Default.SCHEMA_NAME + ".REGIMEN_HOTEL where id_hotel = " + Hotel["id_hotel"] ).AsDataAdapter().Execute()["ReturnedValues"];
                     _regimens = new DataSet();
                     _regimens_adapter.Fill(_regimens);
                 } 
@@ -134,7 +134,7 @@ namespace Resources.Home
                 /* Obtiene el ID */
                 Hotel["id_Hotel"] = DBNull.Value;
                 hotels_adapter.Update(new DataRow[] { Hotel });
-                Hotel["id_hotel"] = (int)new SqlQuery("SELECT id_hotel FROM BOBBY_TABLES.HOTELS WHERE name = '" + Hotel["name"] + "';").ExecuteScalar();
+                Hotel["id_hotel"] = (int)new SqlQuery("SELECT id_hotel FROM " + Resources.Properties.Settings.Default.SCHEMA_NAME + ".HOTELS WHERE name = '" + Hotel["name"] + "';").ExecuteScalar();
                 Hotel.AcceptChanges();
 
                 /* Carga todos los regimenes con ese ID */

@@ -25,7 +25,7 @@ namespace Resources.User_Permissions.UI
             {
                 if (_feat_roles == null)
                 {
-                    _feat_roles_adapter = (SqlDataAdapter) new SqlQuery("SELECT id_feature, id_role FROM BOBBY_TABLES.FEATURES_ROLES").AsDataAdapter().Execute()["ReturnedValues"];
+                    _feat_roles_adapter = (SqlDataAdapter) new SqlQuery("SELECT id_feature, id_role FROM " + Resources.Properties.Settings.Default.SCHEMA_NAME + ".FEATURES_ROLES").AsDataAdapter().Execute()["ReturnedValues"];
                     _feat_roles = new DataSet();
                     _feat_roles_adapter.Fill(_feat_roles);
                 } 
@@ -41,9 +41,9 @@ namespace Resources.User_Permissions.UI
             {
                 if (_roles == null)
                 {
-                    _roles_adapter = (SqlDataAdapter)new SqlQuery("SELECT id_role, name FROM BOBBY_TABLES.ACTIVE_ROLES").AsDataAdapter().Execute()["ReturnedValues"];
+                    _roles_adapter = (SqlDataAdapter)new SqlQuery("SELECT id_role, name FROM " + Resources.Properties.Settings.Default.SCHEMA_NAME + ".ACTIVE_ROLES").AsDataAdapter().Execute()["ReturnedValues"];
                     _roles = new DataSet();
-                    SqlCommand delCmd = new SqlCommand("DELETE FROM BOBBY_TABLES.ACTIVE_ROLES WHERE id_role = @id_role;");
+                    SqlCommand delCmd = new SqlCommand("DELETE FROM " + Resources.Properties.Settings.Default.SCHEMA_NAME + ".ACTIVE_ROLES WHERE id_role = @id_role;");
                     delCmd.Parameters.Add("@id_role", SqlDbType.Int, 4, "id_role");
                     _roles_adapter.DeleteCommand = delCmd;
                     _roles_adapter.Fill(_roles);
@@ -61,9 +61,9 @@ namespace Resources.User_Permissions.UI
             {
                 if (_features == null)
                 {
-                    _features_adapter = (SqlDataAdapter)new SqlQuery("SELECT id_feature, descr FROM BOBBY_TABLES.ACTIVE_FEATURES").AsDataAdapter().Execute()["ReturnedValues"];
+                    _features_adapter = (SqlDataAdapter)new SqlQuery("SELECT id_feature, descr FROM " + Resources.Properties.Settings.Default.SCHEMA_NAME + ".ACTIVE_FEATURES").AsDataAdapter().Execute()["ReturnedValues"];
                     _features = new DataSet();
-                    SqlCommand delCmd = new SqlCommand("DELETE FROM BOBBY_TABLES.ACTIVE_FEATURES WHERE id_feature = @id_feature;");
+                    SqlCommand delCmd = new SqlCommand("DELETE FROM " + Resources.Properties.Settings.Default.SCHEMA_NAME + ".ACTIVE_FEATURES WHERE id_feature = @id_feature;");
                     delCmd.Parameters.Add("@id_feature", SqlDbType.Int,4,"id_feature");
                     _features_adapter.DeleteCommand = delCmd;
                     _features_adapter.Fill(_features);
@@ -169,7 +169,7 @@ namespace Resources.User_Permissions.UI
                 roles.Tables[0].Rows.Add(newR);
 
                 _roles_adapter.Update(roles.Tables[0]);
-                newR["id_role"] = (int)new SqlQuery("SELECT id_role FROM [BOBBY_TABLES].ROLES WHERE name = '" + text + "';").ExecuteScalar(); ;
+                newR["id_role"] = (int)new SqlQuery("SELECT id_role FROM [" + Resources.Properties.Settings.Default.SCHEMA_NAME + "].ROLES WHERE name = '" + text + "';").ExecuteScalar(); ;
                 roles.AcceptChanges();
             };
 
@@ -187,7 +187,7 @@ namespace Resources.User_Permissions.UI
                 features.Tables[0].Rows.Add(newR);
 
                 _features_adapter.Update(features.Tables[0]);
-                newR["id_feature"] = (int)new SqlQuery("SELECT id_feature FROM [BOBBY_TABLES].FEATURES WHERE descr = '" + text + "';").ExecuteScalar(); ;
+                newR["id_feature"] = (int)new SqlQuery("SELECT id_feature FROM [" + Resources.Properties.Settings.Default.SCHEMA_NAME + "].FEATURES WHERE descr = '" + text + "';").ExecuteScalar(); ;
                 features.AcceptChanges();
             };
 

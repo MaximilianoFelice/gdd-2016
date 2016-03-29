@@ -15,7 +15,7 @@ namespace Resources
     {
         public static DataSet GetRoles(String user)
         {
-            return (DataSet)new SqlStoredProcedure("[BOBBY_TABLES].GetUserRoles")
+            return (DataSet)new SqlStoredProcedure("[" + Resources.Properties.Settings.Default.SCHEMA_NAME + "].GetUserRoles")
                                                 .WithParam("@username").As(SqlDbType.VarChar).Value(user.ToString())
                                                 .Execute()["ReturnedValues"];
         }

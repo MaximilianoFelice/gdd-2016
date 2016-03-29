@@ -16,7 +16,7 @@ namespace Resources.DB_Conn_DSL.tests
         [Test]
         public void ExecutesValidQuery()
         {
-            SqlResults results = new SqlQuery("SELECT * FROM [BOBBY_TABLES].USERS;").Execute();
+            SqlResults results = new SqlQuery("SELECT * FROM [" + Resources.Properties.Settings.Default.SCHEMA_NAME + "].USERS;").Execute();
 
             DataSet ReturnedSet = (DataSet) results["ReturnedValues"];
             Assert.True(ReturnedSet.Tables[0].Rows.Count > 0);

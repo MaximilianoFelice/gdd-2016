@@ -12,12 +12,12 @@ namespace Resources.Home
     public class GuestHandler
     {
         public DataSet getPersons() {
-            SqlResults results = new SqlQuery("SELECT * FROM [BOBBY_TABLES].PERSONS").Execute();
+            SqlResults results = new SqlQuery("SELECT * FROM [" + Resources.Properties.Settings.Default.SCHEMA_NAME + "].PERSONS").Execute();
             return (DataSet)results["ReturnedValues"];
         }
 
         public DataSet getDocTypes() {
-            SqlResults results = new SqlQuery("SELECT * FROM [BOBBY_TABLES].DOC_TYPE").Execute();
+            SqlResults results = new SqlQuery("SELECT * FROM [" + Resources.Properties.Settings.Default.SCHEMA_NAME + "].DOC_TYPE").Execute();
             return (DataSet)results["ReturnedValues"];
         }
         public bool PersonExistance(String name, String lastname, String docType, Decimal docNumber,  DateTime birthDate)
@@ -42,7 +42,7 @@ namespace Resources.Home
         {
 
 
-            SqlResults results = new SqlStoredProcedure("[BOBBY_TABLES].SP_PERSON_EXISTS")
+            SqlResults results = new SqlStoredProcedure("[" + Resources.Properties.Settings.Default.SCHEMA_NAME + "].SP_PERSON_EXISTS")
                                  .WithParam("@DocType").As(SqlDbType.VarChar).Value(docType)
                                  .WithParam("@DocNumber").As(SqlDbType.Decimal).Value(docNumber)
                                  .WithParam("@GuestExist").As(SqlDbType.Bit).AsOutput()
@@ -71,7 +71,7 @@ namespace Resources.Home
         public Boolean emailExistsForUpdate(Int32 id_guest, String mail){
             if (!String.IsNullOrEmpty(mail))
             {
-                SqlResults results = new SqlStoredProcedure("[BOBBY_TABLES].SP_EMAIL_EXISTS_UPDATE")
+                SqlResults results = new SqlStoredProcedure("[" + Resources.Properties.Settings.Default.SCHEMA_NAME + "].SP_EMAIL_EXISTS_UPDATE")
                                     .WithParam("@Id").As(SqlDbType.Int).Value(id_guest)
                                     .WithParam("@Email").As(SqlDbType.VarChar).Value(mail)
                                     .WithParam("@EmailExist").As(SqlDbType.Bit).AsOutput()
@@ -86,7 +86,7 @@ namespace Resources.Home
         public Int32 insertPerson(String name, String lastname, String docType, Decimal docNumber, String mail, Decimal phone, DateTime birthDate,
                                 String street, Int32 streetNum, Int32 floor, String dept, String nationality)
         {
-            SqlResults results = new SqlStoredProcedure("[BOBBY_TABLES].SP_INSERT_PERSON")
+            SqlResults results = new SqlStoredProcedure("[" + Resources.Properties.Settings.Default.SCHEMA_NAME + "].SP_INSERT_PERSON")
                                         .WithParam("@Name").As(SqlDbType.VarChar).Value(name)
                                         .WithParam("@Lastname").As(SqlDbType.VarChar).Value(lastname)
                                         .WithParam("@DocType").As(SqlDbType.VarChar).Value(docType)
@@ -115,7 +115,7 @@ namespace Resources.Home
                                 String street, Int32 streetNum,Int32 floor, String dept, String nationality,Int32 state)
         {
 
-            SqlResults results = new SqlStoredProcedure("[BOBBY_TABLES].SP_UPDATE_PERSON")
+            SqlResults results = new SqlStoredProcedure("[" + Resources.Properties.Settings.Default.SCHEMA_NAME + "].SP_UPDATE_PERSON")
                                      .WithParam("@Name").As(SqlDbType.VarChar).Value(name)
                                      .WithParam("@Lastname").As(SqlDbType.VarChar).Value(lastname)
                                      .WithParam("@DocType").As(SqlDbType.VarChar).Value(docType)
@@ -143,7 +143,7 @@ namespace Resources.Home
 
             if (docNumber == -1)
             {
-                SqlResults results = new SqlFunction("[BOBBY_TABLES].SP_FILTER_PERSONS_NULLDOC")
+                SqlResults results = new SqlFunction("[" + Resources.Properties.Settings.Default.SCHEMA_NAME + "].SP_FILTER_PERSONS_NULLDOC")
                                    .WithParam("@Name").As(SqlDbType.VarChar).Value(name)
                                    .WithParam("@Lastname").As(SqlDbType.VarChar).Value(lastname)
                                    .WithParam("@DocType").As(SqlDbType.VarChar).Value(docType)
@@ -153,7 +153,7 @@ namespace Resources.Home
                 return (DataTable)results["ReturnedValues"];
             }
             else {
-                SqlResults results = new SqlFunction("[BOBBY_TABLES].SP_FILTER_PERSONS")
+                SqlResults results = new SqlFunction("[" + Resources.Properties.Settings.Default.SCHEMA_NAME + "].SP_FILTER_PERSONS")
                                    .WithParam("@Name").As(SqlDbType.VarChar).Value(name)
                                    .WithParam("@Lastname").As(SqlDbType.VarChar).Value(lastname)
                                    .WithParam("@DocType").As(SqlDbType.VarChar).Value(docType)
@@ -170,7 +170,7 @@ namespace Resources.Home
         public Boolean deletePerson(Int32 id_guest)
         {
 
-            SqlResults results = new SqlStoredProcedure("[BOBBY_TABLES].SP_DELETE_PERSON")
+            SqlResults results = new SqlStoredProcedure("[" + Resources.Properties.Settings.Default.SCHEMA_NAME + "].SP_DELETE_PERSON")
                                      .WithParam("@IdGuest").As(SqlDbType.Int).Value(id_guest)
                                      .WithParam("@Deleted").As(SqlDbType.Bit).AsOutput()
                                      .Execute();
@@ -179,7 +179,7 @@ namespace Resources.Home
         }
 
         public DataTable getGuestInformation(Int32 id) {
-            SqlResults results = new SqlFunction("[BOBBY_TABLES].FUNCT_GET_INFO")
+            SqlResults results = new SqlFunction("[" + Resources.Properties.Settings.Default.SCHEMA_NAME + "].FUNCT_GET_INFO")
                                 .WithParam("@IdPerson").As(SqlDbType.Int).Value(id)
                                 .Execute();
             return (DataTable)results["ReturnedValues"];

@@ -14,14 +14,14 @@ namespace Resources.Home
 
         public DataSet getRooms()
         {
-            SqlResults results = new SqlQuery("SELECT * FROM [BOBBY_TABLES].ROOMS;").Execute();
+            SqlResults results = new SqlQuery("SELECT * FROM [" + Resources.Properties.Settings.Default.SCHEMA_NAME + "].ROOMS;").Execute();
 
             return (DataSet)results["ReturnedValues"];
 
         }
 
         public DataSet getRoomTypes() {
-            SqlResults results = new SqlQuery("SELECT * FROM [BOBBY_TABLES].ROOM_TYPE;").Execute();
+            SqlResults results = new SqlQuery("SELECT * FROM [" + Resources.Properties.Settings.Default.SCHEMA_NAME + "].ROOM_TYPE;").Execute();
 
             return (DataSet) results["ReturnedValues"];
         
@@ -29,26 +29,26 @@ namespace Resources.Home
 
 
         public DataSet getRoomLocations() {
-            SqlResults results = new SqlQuery("SELECT * FROM [BOBBY_TABLES].ROOM_LOCATION;").Execute();
+            SqlResults results = new SqlQuery("SELECT * FROM [" + Resources.Properties.Settings.Default.SCHEMA_NAME + "].ROOM_LOCATION;").Execute();
 
             return (DataSet)results["ReturnedValues"];
         }
 
         public DataSet getRoomTypeIdFromDescr(String descr){
-            SqlResults results = new SqlQuery("SELECT id_roomtype FROM [BOBBY_TABLES].ROOM_TYPE WHERE descr =" + descr).Execute();
+            SqlResults results = new SqlQuery("SELECT id_roomtype FROM [" + Resources.Properties.Settings.Default.SCHEMA_NAME + "].ROOM_TYPE WHERE descr =" + descr).Execute();
             return (DataSet)results["ReturnedValues"];
         }
 
         public DataSet getRoomTypesForHotel(Int32 id_hotel) {
-            SqlResults results = new SqlQuery("SELECT DISTICT rt.descr FROM [BOBBY_TABLES].ROOM_TYPE rt"
-                                                + "JOIN [BOBBY_TABLES].ROOMS r ON r.id_roomtype= rt.id_roomtype"
+            SqlResults results = new SqlQuery("SELECT DISTICT rt.descr FROM [" + Resources.Properties.Settings.Default.SCHEMA_NAME + "].ROOM_TYPE rt"
+                                                + "JOIN [" + Resources.Properties.Settings.Default.SCHEMA_NAME + "].ROOMS r ON r.id_roomtype= rt.id_roomtype"
                                                 + "AND r.id_hotel = " + id_hotel).Execute();
             return (DataSet)results["ReturnedValues"];
         }
 
         /*public Boolean roomExists(Int32 roomNum, Int32 idHotel) {
 
-            SqlResults results = new SqlStoredProcedure("[BOBBY_TABLES].SP_ROOM_EXISTS")
+            SqlResults results = new SqlStoredProcedure("[" + Resources.Properties.Settings.Default.SCHEMA_NAME + "].SP_ROOM_EXISTS")
                                     .WithParam("@RoomNum").As(SqlDbType.Int).Value(roomNum)
                                     .WithParam("@IdHotel").As(SqlDbType.Int).Value(idHotel)
                                     .WithParam("@RoomExists").As(SqlDbType.Bit).AsOutput()
@@ -77,7 +77,7 @@ namespace Resources.Home
         public Boolean insertRoom(Int32 idHotel, Int32 roomNum, Int32 floor, Int32 location, Int32 type, String descrip)
         {
         
-         SqlResults results = new SqlStoredProcedure("[BOBBY_TABLES].SP_INSERT_ROOM")
+         SqlResults results = new SqlStoredProcedure("[" + Resources.Properties.Settings.Default.SCHEMA_NAME + "].SP_INSERT_ROOM")
                                 .WithParam("@IdHotel").As(SqlDbType.Int).Value(idHotel)
                                 .WithParam("@RoomNum").As(SqlDbType.Int).Value(roomNum)
                                 .WithParam("@Floor").As(SqlDbType.Int).Value(floor)
@@ -94,7 +94,7 @@ namespace Resources.Home
         public Boolean updateRoom(Int32 idHotel, Int32 roomNum, Int32 floor, String location, String type, String descrip)
         {
 
-            SqlResults results = new SqlStoredProcedure("[BOBBY_TABLES].SP_UPDATE_ROOM")
+            SqlResults results = new SqlStoredProcedure("[" + Resources.Properties.Settings.Default.SCHEMA_NAME + "].SP_UPDATE_ROOM")
                                    .WithParam("@IdHotel").As(SqlDbType.Int).Value(idHotel)
                                    .WithParam("@RoomNum").As(SqlDbType.Int).Value(roomNum)
                                    .WithParam("@Floor").As(SqlDbType.Int).Value(floor)
@@ -112,7 +112,7 @@ namespace Resources.Home
         public DataSet filteredSearch(Int32 idHotel, Int32? roomNum, Int32? floor, Int32 location, Int32 type, String descrip)
         {
 
-            SqlResults results = new SqlFunction("[BOBBY_TABLES].SP_FILTER_ROOMS")
+            SqlResults results = new SqlFunction("[" + Resources.Properties.Settings.Default.SCHEMA_NAME + "].SP_FILTER_ROOMS")
                                 .WithParam("@IdHotel").As(SqlDbType.Int).Value(idHotel)
                                 .WithParam("@RoomNum").As(SqlDbType.Int).Value(roomNum)
                                 .WithParam("@Floor").As(SqlDbType.Int).Value(floor)
@@ -129,7 +129,7 @@ namespace Resources.Home
         public Boolean deleteRoom(Int32 id_room)
         {
 
-            SqlResults results = new SqlStoredProcedure("[BOBBY_TABLES].SP_DELETE_ROOM")
+            SqlResults results = new SqlStoredProcedure("[" + Resources.Properties.Settings.Default.SCHEMA_NAME + "].SP_DELETE_ROOM")
                                    .WithParam("@IdRoom").As(SqlDbType.Int).Value(id_room)
                                    .WithParam("@Deleted").As(SqlDbType.Bit).AsOutput()
                                    .Execute();             

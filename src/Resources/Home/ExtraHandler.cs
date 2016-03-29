@@ -10,13 +10,13 @@ namespace Resources.Home
     public class ExtraHandler
     {
         public DataSet getExtras() {
-            SqlResults results = new SqlQuery("SELECT DISTINCT * FROM BOBBY_TABLES.EXTRAS")
+            SqlResults results = new SqlQuery("SELECT DISTINCT * FROM " + Resources.Properties.Settings.Default.SCHEMA_NAME + ".EXTRAS")
                                  .Execute();
             return (DataSet)results["ReturnedValues"];
         }
 
         public Boolean bookingHasAllInclusive(Int32 id_booking) {
-            SqlResults results = new SqlStoredProcedure("[BOBBY_TABLES].SP_BOOKING_ALL_INCLUSIVE")
+            SqlResults results = new SqlStoredProcedure("[" + Resources.Properties.Settings.Default.SCHEMA_NAME + "].SP_BOOKING_ALL_INCLUSIVE")
                                  .WithParam("@IdBooking").As(SqlDbType.Int).Value(id_booking)
                                  .WithParam("@Return").As(SqlDbType.Bit).AsOutput()
                                  .Execute();
@@ -24,7 +24,7 @@ namespace Resources.Home
         }
 
         public Int32 addExtraToStay(Int32 id_booking, Int32 id_extra) {
-            SqlResults results = new SqlStoredProcedure("[BOBBY_TABLES].SP_INSERT_EXTRA_STAY")
+            SqlResults results = new SqlStoredProcedure("[" + Resources.Properties.Settings.Default.SCHEMA_NAME + "].SP_INSERT_EXTRA_STAY")
                                 .WithParam("@IdBooking").As(SqlDbType.Int).Value(id_booking)
                                 .WithParam("@IdExtra").As(SqlDbType.Int).Value(id_extra)
                                 .WithParam("@IdExInserted").As(SqlDbType.Int).AsOutput()

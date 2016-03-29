@@ -14,5 +14,8 @@
     <Setting Name="DB_NAME" Type="System.String" Scope="User">
       <Value Profile="(Default)">GD1C2016</Value>
     </Setting>
+    <Setting Name="SCHEMA_NAME" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">BOBBY_TABLES</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

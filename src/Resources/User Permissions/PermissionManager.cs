@@ -130,7 +130,7 @@ namespace Resources.User_Permissions
             string pass = GetSHA256(Password);
 
             /*Sending info to DB */
-            SqlResults results = new SqlStoredProcedure("[BOBBY_TABLES].validateUserPass")
+            SqlResults results = new SqlStoredProcedure("[" + Resources.Properties.Settings.Default.SCHEMA_NAME + "].validateUserPass")
                                     .WithParam("@User").As(SqlDbType.VarChar).Value(Username.ToString())
                                     .WithParam("@Pass").As(SqlDbType.VarChar).Value(pass)
                                     .WithParam("@Login_Attempts").As(SqlDbType.Int).AsOutput()

@@ -20,7 +20,7 @@ namespace Resources.Model
             {
                 if (_regimen == null)
                 {
-                    _regimen_adapter = (SqlDataAdapter) new SqlQuery("SELECT id_regimen, descr, price, stat FROM BOBBY_TABLES.REGIMENS;").AsDataAdapter().Execute()["ReturnedValues"];
+                    _regimen_adapter = (SqlDataAdapter) new SqlQuery("SELECT id_regimen, descr, price, stat FROM " + Resources.Properties.Settings.Default.SCHEMA_NAME + ".REGIMENS;").AsDataAdapter().Execute()["ReturnedValues"];
                     _regimen = new DataSet();
                     _regimen_adapter.Fill(_regimen);
                 } 

@@ -99,7 +99,7 @@ namespace Resources.User_Permissions.UFR
             _LoadedFeatures = new Dictionary<String, Feature>();
 
             /* Loading Features from database */
-            DataSet res = (DataSet) new SqlQuery("SELECT * FROM [BOBBY_TABLES].ACTIVE_FEATURES").AsDataSet().Execute()["ReturnedValues"];
+            DataSet res = (DataSet) new SqlQuery("SELECT * FROM [" + Resources.Properties.Settings.Default.SCHEMA_NAME + "].ACTIVE_FEATURES").AsDataSet().Execute()["ReturnedValues"];
 
             foreach (DataRow row in res.Tables[0].AsEnumerable()) new Feature(row);
             

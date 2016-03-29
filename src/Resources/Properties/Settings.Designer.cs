@@ -67,5 +67,14 @@ namespace Resources.Properties {
                 this["DB_NAME"] = value;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("BOBBY_TABLES")]
+        public string SCHEMA_NAME {
+            get {
+                return ((string)(this["SCHEMA_NAME"]));
+            }
+        }
     }
 }

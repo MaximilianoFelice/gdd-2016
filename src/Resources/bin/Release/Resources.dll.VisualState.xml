@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <VisualState xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ShowCheckBoxes="false">
   <TopNode>[0-1026]C:\Users\Maximiliano Felice\workspace\GDD\src\Resources\bin\Release\Resources.dll</TopNode>
-  <SelectedNode>[0-1025]Resources.DB_Conn_DSL.tests.Connection_tests.CanConnectToDB</SelectedNode>
+  <SelectedNode>[0-1017]Resources.DB_Conn_DSL.tests.SqlQuery_tests.ExecutesValidQuery</SelectedNode>
   <ExcludeCategories>false</ExcludeCategories>
   <Nodes>
     <Node UniqueName="[0-1026]C:\Users\Maximiliano Felice\workspace\GDD\src\Resources\bin\Release\Resources.dll" Expanded="true" />
