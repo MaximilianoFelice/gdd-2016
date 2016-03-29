@@ -17,8 +17,11 @@ namespace Resources.User_Permissions.tests
 
             List<String> features = Feature.getFeaturesNames;
 
-            Assert.IsTrue(features.Contains("Admin"));
-            Assert.IsTrue(features.Contains("Other"));
+            Console.WriteLine(string.Join(";", features.ToArray()));
+            Console.WriteLine(features.Count());
+
+            Assert.True(features.Contains("Admin"));
+            Assert.True(features.Contains("Other"));
             Assert.IsTrue(features.Contains("Another"));
             Assert.IsTrue(features.Contains("Then"));
             Assert.IsFalse(features.Contains("OtraCosirijilla"));

@@ -1,0 +1,17 @@
+C:\Users\Maximiliano Felice\workspace\GDD\src\Resources\bin\Debug\Resources.dll.config
+C:\Users\Maximiliano Felice\workspace\GDD\src\Resources\bin\Debug\Resources.dll
+C:\Users\Maximiliano Felice\workspace\GDD\src\Resources\bin\Debug\Resources.pdb
+C:\Users\Maximiliano Felice\workspace\GDD\src\Resources\bin\Debug\nunit.framework.dll
+C:\Users\Maximiliano Felice\workspace\GDD\src\Resources\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Maximiliano Felice\workspace\GDD\src\Resources\obj\Debug\Resources.Properties.Resources.resources
+C:\Users\Maximiliano Felice\workspace\GDD\src\Resources\obj\Debug\Resources.User_Permissions.HandledControls.HandledForm.resources
+C:\Users\Maximiliano Felice\workspace\GDD\src\Resources\obj\Debug\Resources.User_Permissions.tests.ResourceForms.Attribute_tests_form.resources
+C:\Users\Maximiliano Felice\workspace\GDD\src\Resources\obj\Debug\Resources.User_Permissions.tests.ResourceForms.Integration_Form_Test.resources
+C:\Users\Maximiliano Felice\workspace\GDD\src\Resources\obj\Debug\Resources.User_Permissions.UI.frmAddNew.resources
+C:\Users\Maximiliano Felice\workspace\GDD\src\Resources\obj\Debug\Resources.User_Permissions.UI.ChooseRole.resources
+C:\Users\Maximiliano Felice\workspace\GDD\src\Resources\obj\Debug\Resources.User_Permissions.UI.frmLogin.resources
+C:\Users\Maximiliano Felice\workspace\GDD\src\Resources\obj\Debug\Resources.User_Permissions.UI.RehabForm.resources
+C:\Users\Maximiliano Felice\workspace\GDD\src\Resources\obj\Debug\Resources.User_Permissions.UI.frmRoles.resources
+C:\Users\Maximiliano Felice\workspace\GDD\src\Resources\obj\Debug\Resources.csproj.GenerateResource.Cache
+C:\Users\Maximiliano Felice\workspace\GDD\src\Resources\obj\Debug\Resources.dll
+C:\Users\Maximiliano Felice\workspace\GDD\src\Resources\obj\Debug\Resources.pdb

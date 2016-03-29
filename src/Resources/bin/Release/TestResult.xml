@@ -1,42 +1,68 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--This file represents the results of running a test suite-->
-<test-results name="C:\Users\Maximiliano Felice\workspace\GDD\src\Resources\bin\Release\Resources.dll" total="1" errors="1" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2016-03-29" time="19:17:22">
+<test-results name="C:\Users\Maximiliano Felice\workspace\GDD\src\Resources\bin\Release\Resources.dll" total="18" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2016-03-29" time="20:24:48">
   <environment nunit-version="2.6.3.13283" clr-version="2.0.50727.4927" os-version="Microsoft Windows NT 6.1.7600.0" platform="Win32NT" cwd="C:\Program Files (x86)\NUnit 2.6.3\bin" machine-name="MAXIMILIANOFELI" user="Maximiliano Felice" user-domain="MaximilianoFeli" />
   <culture-info current-culture="es-ES" current-uiculture="es-ES" />
-  <test-suite type="Assembly" name="C:\Users\Maximiliano Felice\workspace\GDD\src\Resources\bin\Release\Resources.dll" executed="True" result="Failure" success="False" time="0.019" asserts="0">
+  <test-suite type="Assembly" name="C:\Users\Maximiliano Felice\workspace\GDD\src\Resources\bin\Release\Resources.dll" executed="True" result="Success" success="True" time="2.298" asserts="0">
     <results>
-      <test-suite type="Namespace" name="Resources" executed="True" result="Failure" success="False" time="0.018" asserts="0">
+      <test-suite type="Namespace" name="Resources" executed="True" result="Success" success="True" time="2.297" asserts="0">
         <results>
-          <test-suite type="Namespace" name="DB_Conn_DSL" executed="True" result="Failure" success="False" time="0.017" asserts="0">
+          <test-suite type="Namespace" name="DB_Conn_DSL" executed="True" result="Success" success="True" time="0.978" asserts="0">
             <results>
-              <test-suite type="Namespace" name="tests" executed="True" result="Failure" success="False" time="0.016" asserts="0">
+              <test-suite type="Namespace" name="tests" executed="True" result="Success" success="True" time="0.977" asserts="0">
                 <results>
-                  <test-suite type="TestFixture" name="SqlQuery_tests" executed="True" result="Failure" success="False" time="0.014" asserts="0">
+                  <test-suite type="TestFixture" name="Connection_tests" executed="True" result="Success" success="True" time="0.012" asserts="0">
                     <results>
-                      <test-case name="Resources.DB_Conn_DSL.tests.SqlQuery_tests.ExecutesValidQuery" executed="True" result="Error" success="False" time="0.007" asserts="0">
-                        <failure>
-                          <message><![CDATA[System.Data.SqlClient.SqlException : El nombre de objeto 'BOBBY_TABLES.USERS' no es válido.]]></message>
-                          <stack-trace><![CDATA[en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
-en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
-en System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
-en System.Data.SqlClient.SqlDataReader.ConsumeMetaData()
-en System.Data.SqlClient.SqlDataReader.get_MetaData()
-en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
-en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
-en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
-en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
-en System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
-en System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
-en System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
-en System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
-en Resources.DB_Conn_DSL.DataSetRetriever.Execute(SqlCommand Command) en C:\Users\Maximiliano Felice\workspace\GDD\src\Resources\DB Conn DSL\DataSetRetriever.cs:línea 20
-en Resources.DB_Conn_DSL.SqlCommandDSL.Execute() en C:\Users\Maximiliano Felice\workspace\GDD\src\Resources\DB Conn DSL\SqlCommandDSL.cs:línea 26
-en Resources.DB_Conn_DSL.tests.SqlQuery_tests.ExecutesValidQuery() en C:\Users\Maximiliano Felice\workspace\GDD\src\Resources\DB Conn DSL\tests\SqlQuery_tests.cs:línea 21
-]]></stack-trace>
-                        </failure>
-                      </test-case>
+                      <test-case name="Resources.DB_Conn_DSL.tests.Connection_tests.CanConnectToDB" executed="True" result="Success" success="True" time="0.008" asserts="1" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="SqlQuery_tests" executed="True" result="Success" success="True" time="0.028" asserts="0">
+                    <results>
+                      <test-case name="Resources.DB_Conn_DSL.tests.SqlQuery_tests.ExecutesValidQuery" executed="True" result="Success" success="True" time="0.024" asserts="1" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="StoredProcedureConnection_tests" executed="True" result="Success" success="True" time="0.916" asserts="0">
+                    <results>
+                      <test-case name="Resources.DB_Conn_DSL.tests.StoredProcedureConnection_tests.AddsNewProperties" executed="True" result="Success" success="True" time="0.080" asserts="3" />
+                      <test-case name="Resources.DB_Conn_DSL.tests.StoredProcedureConnection_tests.CreatesNewSoredProcedure" executed="True" result="Success" success="True" time="0.002" asserts="2" />
+                      <test-case name="Resources.DB_Conn_DSL.tests.StoredProcedureConnection_tests.ExecuteReturnsAllOutputParams" executed="True" result="Success" success="True" time="0.162" asserts="3" />
+                      <test-case name="Resources.DB_Conn_DSL.tests.StoredProcedureConnection_tests.ExecuteWithComeback" executed="True" result="Success" success="True" time="0.008" asserts="1" />
+                      <test-case name="Resources.DB_Conn_DSL.tests.StoredProcedureConnection_tests.RetunsValidDataReader" executed="True" result="Success" success="True" time="0.017" asserts="1" />
+                      <test-case name="Resources.DB_Conn_DSL.tests.StoredProcedureConnection_tests.ReturnsValidDataTable" executed="True" result="Success" success="True" time="0.464" asserts="1" />
+                      <test-case name="Resources.DB_Conn_DSL.tests.StoredProcedureConnection_tests.ReturnValuesWorks" executed="True" result="Success" success="True" time="0.005" asserts="1" />
+                      <test-case name="Resources.DB_Conn_DSL.tests.StoredProcedureConnection_tests.userLoginIsCorrect" executed="True" result="Success" success="True" time="0.095" asserts="1" />
+                      <test-case name="Resources.DB_Conn_DSL.tests.StoredProcedureConnection_tests.userLoginIsNotCorrect" executed="True" result="Success" success="True" time="0.008" asserts="1" />
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+          <test-suite type="Namespace" name="User_Permissions" executed="True" result="Success" success="True" time="1.295" asserts="0">
+            <results>
+              <test-suite type="Namespace" name="tests" executed="True" result="Success" success="True" time="1.294" asserts="0">
+                <results>
+                  <test-suite type="TestFixture" name="Annotated_Forms_Tests" executed="True" result="Success" success="True" time="1.142" asserts="0">
+                    <results>
+                      <test-case name="Resources.User_Permissions.tests.Annotated_Forms_Tests.Check_Instance_Class" executed="True" result="Success" success="True" time="1.091" asserts="1" />
+                      <test-case name="Resources.User_Permissions.tests.Annotated_Forms_Tests.GetHandledControls" executed="True" result="Success" success="True" time="0.040" asserts="8" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="Features_test" executed="True" result="Success" success="True" time="0.004" asserts="0">
+                    <results>
+                      <test-case name="Resources.User_Permissions.tests.Features_test.LoadFeatures" executed="True" result="Success" success="True" time="0.002" asserts="4" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="Hooks_tests" executed="True" result="Success" success="True" time="0.088" asserts="0">
+                    <results>
+                      <test-case name="Resources.User_Permissions.tests.Hooks_tests.controlCanHandleVisibility" executed="True" result="Success" success="True" time="0.027" asserts="1" />
+                      <test-case name="Resources.User_Permissions.tests.Hooks_tests.controlGetsHooked" executed="True" result="Success" success="True" time="0.002" asserts="1" />
+                      <test-case name="Resources.User_Permissions.tests.Hooks_tests.HasFeaturesUP" executed="True" result="Success" success="True" time="0.002" asserts="1" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="Roles_tests" executed="True" result="Success" success="True" time="0.004" asserts="0">
+                    <results>
+                      <test-case name="Resources.User_Permissions.tests.Roles_tests.HasRolesUP" executed="True" result="Success" success="True" time="0.001" asserts="0" />
                     </results>
                   </test-suite>
                 </results>

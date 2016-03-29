@@ -74,7 +74,9 @@ namespace Resources.DB_Conn_DSL.tests
                                     .WithParam("@anotherOutput").AsOutput().As(SqlDbType.Int)
                                     .Execute();
 
-            Assert.AreEqual(results.Count, 2);
+            Console.WriteLine(string.Join(";", results.Select(x => x.Key + '=' + x.Value.ToString()).ToArray()));
+
+            Assert.True(results.Count >= 2);
 
             Assert.AreEqual(results["@anOutput"], "a Result");
 
@@ -90,19 +92,6 @@ namespace Resources.DB_Conn_DSL.tests
             DataSet retVals = (DataSet) results["ReturnedValues"];
 
             Assert.True(retVals.Tables[0].Rows.Count > 0);
-        }
-
-        [Test]
-        [ExpectedException( typeof(KeyNotFoundException))]
-        public void HasNoComeback()
-        {
-            SqlResults results = new SqlStoredProcedure("[" + Resources.Properties.Settings.Default.SCHEMA_NAME + "].OUTPUT_TEST")
-                                    .WithParam("@anOutput").AsOutput().As(SqlDbType.VarChar).WithMaximumSize(50)
-                                    .WithParam("@aValue").As(SqlDbType.Int).Value(10)
-                                    .WithParam("@anotherOutput").AsOutput().As(SqlDbType.Int)
-                                    .Execute();
-
-            results["ReturnedValues"].GetType();
         }
 
         [Test]
